@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: five-hand-poker
+  main:
+    allow-bean-definition-override: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+server:
+  port: 8080
+
+logging:
+  lever:
+    za.co.melta.five.hand.card: trace

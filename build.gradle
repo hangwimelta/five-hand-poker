@@ -1,0 +1,54 @@
+buildscript {
+	ext {
+		springBootVersion = '2.7.11'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.11'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'za.co.melta.five.hand.card'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.7.0'
+	implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.7.0'
+	annotationProcessor 'org.projectlombok:lombok'
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	runtimeOnly 'com.h2database:h2'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+	testImplementation "org.junit.jupiter:junit-jupiter-params:5.6.3"
+	testImplementation 'org.assertj:assertj-core:3.19.0'
+	testCompileOnly 'org.mockito:mockito-core'
+	testImplementation 'org.powermock:powermock-module-junit4-rule:2.0.9'
+}
+
+test {
+	useJUnitPlatform()
+}
