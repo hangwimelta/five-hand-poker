@@ -2,7 +2,11 @@ package za.co.melta.five.hand.card.util;
 
 import java.security.NoSuchAlgorithmException;
 
+import org.apache.logging.log4j.util.Strings;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class PokerHandUtilTest {
     /**
@@ -10,10 +14,9 @@ class PokerHandUtilTest {
      */
     @Test
     void testGenerateHand() throws NoSuchAlgorithmException {
-        // TODO: Complete this test.
-        //   Diffblue AI was unable to find a test
-
-        PokerHandUtil.generateHand(3);
+        String generateHand = PokerHandUtil.generateHand(5);
+        assertNotNull(generateHand);
+        assertFalse(Strings.isBlank(generateHand));
     }
 }
 
