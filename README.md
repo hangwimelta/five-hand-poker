@@ -3,7 +3,7 @@ This is a spring boot project with Gradle.
 
 # Building project
 Gradle is required to build the project.
-Or just run in intelliJ or savage on with any other IDE
+Or just run in on any IDE
 
 ### Option 1
 
